@@ -1,0 +1,31 @@
+{
+  "name": "aws-ssm-keyring",
+  "version": "1.0.0",
+  "description": "Manage team secrets using AWS SSM",
+  "main": "dist/cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nordic Semiconductor ASA | nordicsemi.no",
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coderbyheart/aws-ssm-keyring.git"
+  },
+  "bugs": {
+    "url": "https://github.com/coderbyheart/aws-ssm-keyring/issues"
+  },
+  "homepage": "https://github.com/coderbyheart/aws-ssm-keyring#readme",
+  "dependencies": {
+    "aws-cli": "0.0.1",
+    "aws-sdk": "^2.113.0",
+    "colors": "^1.1.2",
+    "commander": "^2.11.0",
+    "dotenv": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.28",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.2"
+  }
+}
