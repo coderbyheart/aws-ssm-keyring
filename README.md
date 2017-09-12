@@ -1,5 +1,7 @@
 # aws-ssm-keyring
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/coderbyheart/aws-ssm-keyring.svg)](https://greenkeeper.io/)
+
 Manage Team Secrets using AWS SSM
 
 This is a simple for managing secrets within a team.
