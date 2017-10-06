@@ -1,12 +1,13 @@
 import program = require('commander');
 import {yellow, red} from 'colors';
 import {ssm, KeyId} from './config';
+import { keyName } from './util';
 
 program
     .arguments('<id>')
     .action((id) => ssm
         .deleteParameter({
-            Name: `/teamsecret/${KeyId}/${id}`,
+            Name: keyName(KeyId, id),
         })
         .promise()
         .then(() => {

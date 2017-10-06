@@ -1,6 +1,7 @@
 import program = require('commander');
-import {green, red} from 'colors';
-import {ssm, KeyId} from './config';
+import { green, red } from 'colors';
+import { ssm, KeyId } from './config';
+import { keyName } from './util';
 
 program
     .arguments('<id> <secret>')
@@ -8,20 +9,21 @@ program
     .option('-c, --comment <comment>', 'comment', '')
     .action((id, secret, options) => ssm
         .putParameter({
-            Name: `/teamsecret/${KeyId}/${id}`,
+            Name: keyName(KeyId, id),
             Type: 'SecureString',
             Value: JSON.stringify({
+                id,
                 secret,
                 username: options.username,
                 comment: options.comment
             }),
-            Description: 'Shared team secret',
+            Description: `Shared team secret: ${id}`,
             KeyId,
             Overwrite: true
         })
         .promise()
         .then(() => ssm.addTagsToResource({
-            ResourceId: `/teamsecret/${KeyId}/${id}`,
+            ResourceId: keyName(KeyId, id),
             ResourceType: 'Parameter',
             Tags: [
                 {
@@ -39,3 +41,4 @@ program
     );
 
 program.parse(process.argv);
+

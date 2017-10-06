@@ -1,12 +1,13 @@
 import program = require('commander');
-import {green, red, blue, grey} from 'colors';
-import {ssm, KeyId} from './config';
+import { green, red, blue, grey } from 'colors';
+import { ssm, KeyId } from './config';
+import { keyName } from './util';
 
 program
     .arguments('<id>')
     .action((id) => ssm
         .getParameter({
-            Name: `/teamsecret/${KeyId}/${id}`,
+            Name: keyName(KeyId, id),
             WithDecryption: true
         })
         .promise()

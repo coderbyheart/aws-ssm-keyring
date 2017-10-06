@@ -4,7 +4,8 @@
   "description": "Manage team secrets using AWS SSM",
   "main": "dist/cli.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "tslint --project ./tsconfig.json"
   },
   "author": "Nordic Semiconductor ASA | nordicsemi.no",
   "license": "BSD-3-Clause",
