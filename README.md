@@ -16,10 +16,11 @@ That way you can easily assign who has access the the secrets.
 Create a new Encryption Key in AWS IAM. Assign users that should be
 allowed to access the data as admins or users of that key.
 
-Copy the `.env.dist` file to `.env` and put the key ID in there.
+Copy the `.env.dist` file to `.env` and put the key ID in there and add your personal AWS credentials.
+
+Run
 
     npm i
-    make dist
 
 ## Usage
 
