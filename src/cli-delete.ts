@@ -1,6 +1,6 @@
 import program = require('commander');
-import {yellow, red} from 'colors';
-import {ssm, KeyId} from './config';
+import { yellow, red } from 'colors';
+import { ssm, KeyId } from './config';
 import { keyName } from './util';
 
 program

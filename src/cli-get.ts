@@ -11,8 +11,12 @@ program
             WithDecryption: true
         })
         .promise()
-        .then(({Parameter: {Value}}) => {
-            const {secret, username, comment} = JSON.parse(Value);
+        .then(({Parameter}) => {
+            if (!Parameter) {
+                throw new Error(`Key "${id}" not found.`);
+            }
+            const {Value} = Parameter;
+            const {secret, username, comment} = JSON.parse(Value || '');
             console.log(green(`${id}:`), blue(secret));
             if (username) {
                 console.log(`Username: ${username}`);

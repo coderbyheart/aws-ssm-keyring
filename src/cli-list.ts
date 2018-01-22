@@ -8,8 +8,12 @@ ssm
     })
     .promise()
     .then(({Parameters}) => {
-        console.log(`${yellow(Parameters.length)} secrets on record`);
+        if (!Parameters) {
+            throw new Error(`Keys not found in "${KeyId}"!`);
+        }
+        const numKeys = (Parameters || []).length;
+        console.log(`${yellow('' + numKeys)} secrets on record`);
         Parameters.map(({Name, Value}) => {
-            console.log(`- ${green(JSON.parse(Value).id)}`);
+            console.log(`- ${green(JSON.parse(Value || '').id)}`);
         });
     });
