@@ -15,6 +15,7 @@ program
         })
         .catch(err => {
             console.error(red(err));
+            process.exit(1);
         }),
     );
 
