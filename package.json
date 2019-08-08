@@ -1,12 +1,13 @@
 {
   "name": "aws-ssm-keyring",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Manage team secrets using AWS SSM",
   "main": "dist/cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "tslint --project ./tsconfig.json",
-    "postinstall": "make dist"
+    "postinstall": "make dist",
+    "prepublishOnly": "npx tsc"
   },
   "author": "Nordic Semiconductor ASA | nordicsemi.no",
   "license": "BSD-3-Clause",
@@ -33,6 +34,12 @@
     "typescript": "^3.5.3"
   },
   "engines": {
-    "node": ">=6.10.2"
-  }
+    "node": ">=10.0.0"
+  },
+  "files": [
+    "dist",
+    "package-lock.json",
+    "README.md",
+    "LICENSE"
+  ]
 }

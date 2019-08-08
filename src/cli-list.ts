@@ -13,7 +13,7 @@ ssm
         }
         const numKeys = (Parameters || []).length;
         console.log(`${yellow('' + numKeys)} secrets on record`);
-        Parameters.map(({Name, Value}) => {
+        Parameters.map(({Value}) => {
             console.log(`- ${green(JSON.parse(Value || '').id)}`);
         });
     })
