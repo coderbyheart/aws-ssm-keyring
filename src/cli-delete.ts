@@ -15,7 +15,7 @@ program
         })
         .catch(err => {
             console.error(red(err));
-        })
+        }),
     );
 
 program.parse(process.argv);

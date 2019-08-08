@@ -15,11 +15,11 @@ program
                 id,
                 secret,
                 username: options.username,
-                comment: options.comment
+                comment: options.comment,
             }),
             Description: `Shared team secret: ${id}`,
             KeyId,
-            Overwrite: true
+            Overwrite: true,
         })
         .promise()
         .then(() => ssm.addTagsToResource({
@@ -28,16 +28,16 @@ program
             Tags: [
                 {
                     Key: 'teamsecret',
-                    Value: '1'
-                }
-            ]
+                    Value: '1',
+                },
+            ],
         }).promise())
         .then(() => {
             console.log(green(`Stored ${id}`));
         })
         .catch(err => {
             console.error(red(err));
-        })
+        }),
     );
 
 program.parse(process.argv);

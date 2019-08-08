@@ -11,5 +11,5 @@ if (!KeyId || !KeyId.length) {
 }
 
 export const ssm = new SSM({
-    region: process.env.AWS_REGION || 'us-east-1'
+    region: process.env.AWS_REGION || 'us-east-1',
 });

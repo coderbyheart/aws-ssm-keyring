@@ -1,10 +1,10 @@
-import { green, yellow } from 'colors';
+import { green, red, yellow } from 'colors';
 import { ssm, KeyId } from './config';
 
 ssm
     .getParametersByPath({
         Path: `/teamsecret/${KeyId}`,
-        WithDecryption: true
+        WithDecryption: true,
     })
     .promise()
     .then(({Parameters}) => {
@@ -16,4 +16,7 @@ ssm
         Parameters.map(({Name, Value}) => {
             console.log(`- ${green(JSON.parse(Value || '').id)}`);
         });
+    })
+    .catch(err => {
+        console.error(red(err));
     });

@@ -8,7 +8,7 @@ program
     .action((id) => ssm
         .getParameter({
             Name: keyName(KeyId, id),
-            WithDecryption: true
+            WithDecryption: true,
         })
         .promise()
         .then(({Parameter}) => {
@@ -27,7 +27,7 @@ program
         })
         .catch(err => {
             console.error(red(err));
-        })
+        }),
     );
 
 program.parse(process.argv);
