@@ -1,6 +1,6 @@
 {
   "name": "aws-ssm-keyring",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Manage team secrets using AWS SSM",
   "main": "dist/cli.js",
   "scripts": {
