@@ -4,7 +4,7 @@
 
 Manage Team Secrets using AWS SSM
 
-This is a simple for managing secrets within a team.
+This is a simple tool for managing secrets within a team.
 
 Secrets are stored as Amazon EC2 Systems Manager parameters, 
 and encrypted using a Amazon IAM Encryption key.
