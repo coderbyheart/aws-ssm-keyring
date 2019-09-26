@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/coderbyheart/aws-ssm-keyring#readme",
   "dependencies": {
-    "aws-sdk": "^2.531.0",
+    "aws-sdk": "^2.537.0",
     "colors": "^1.3.3",
     "commander": "^3.0.1",
     "dotenv": "^8.1.0"
